@@ -74,4 +74,7 @@ public class secretaria {
 
 	@ManyToOne(mappedBy = "secretaria")
 	private miembro miembro;
+	
+	@ManyToOne(mappedBy = "secretaria")
+	private evento evento;
 }
