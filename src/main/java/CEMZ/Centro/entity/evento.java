@@ -6,7 +6,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
 
 @Entity
 
@@ -65,6 +64,13 @@ public class evento {
 		this.fecha = fecha;
 		this.lugar = lugar;
 		this.secretaria = secretaria;
+	}
+
+	public evento(String nombre, String fecha, String lugar) {
+		super();
+		this.nombre = nombre;
+		this.fecha = fecha;
+		this.lugar = lugar;
 	}
 
 	public evento() {

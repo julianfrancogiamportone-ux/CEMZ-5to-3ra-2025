@@ -8,10 +8,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
 
 @Entity
-
 public class miembro {
    
 	@Id
@@ -32,6 +30,17 @@ public class miembro {
 		super();
 	}
 
+	
+
+	public miembro(long id, String cargo, LocalDate fecha_de_union) {
+		super();
+		this.id = id;
+		this.cargo = cargo;
+		this.fecha_de_union = fecha_de_union;
+	}
+
+
+
 	public miembro(String cargo, LocalDate fecha_de_union, CEMZ.Centro.entity.secretaria secretaria,
 			CEMZ.Centro.entity.estudiante estudiante) {
 		super();
@@ -40,6 +49,8 @@ public class miembro {
 		this.secretaria = secretaria;
 		this.estudiante = estudiante;
 	}
+
+
 
 	public long getId() {
 		return id;

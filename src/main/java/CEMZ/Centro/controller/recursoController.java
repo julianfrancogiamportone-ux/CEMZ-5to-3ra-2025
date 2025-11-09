@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import CEMZ.Centro.Iservice.IestudianteService;
 import CEMZ.Centro.Iservice.IrecursoService;
-import CEMZ.Centro.entity.estudiante;
 import CEMZ.Centro.entity.recurso;
 
 

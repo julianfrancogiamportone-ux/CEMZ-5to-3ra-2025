@@ -1,7 +1,5 @@
 package CEMZ.Centro.entity;
 
-import org.hibernate.annotations.ManyToAny;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,9 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 
 
-
 @Entity
-
 public class estudiante {
    
 	@Id
@@ -22,7 +18,7 @@ public class estudiante {
 	private int dni; 
 	private String email;
 	
-	@ManyToAny(mappedBy = "miembro")
+	@OneToOne(mappedBy = "estudiante")
 	private miembro miembro;
 	
 	public estudiante() {

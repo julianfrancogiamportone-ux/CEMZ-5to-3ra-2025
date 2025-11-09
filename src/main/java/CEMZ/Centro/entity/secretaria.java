@@ -1,12 +1,12 @@
 package CEMZ.Centro.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.OneToMany;
 
 @Entity
 
@@ -49,21 +49,14 @@ public class secretaria {
 	}
 
 
-	public miembro getMiembro() {
-		return miembro;
-	}
 
 
-	public void setMiembro(miembro miembro) {
-		this.miembro = miembro;
-	}
 
-
-	public secretaria(String nombre, String descripcion, CEMZ.Centro.entity.miembro miembro) {
+	public secretaria(String nombre, String descripcion) {
 		super();
 		this.nombre = nombre;
 		this.descripcion = descripcion;
-		this.miembro = miembro;
+		
 	}
 
 
@@ -72,9 +65,9 @@ public class secretaria {
 	}
 
 
-	@ManyToOne(mappedBy = "secretaria")
-	private miembro miembro;
+	@OneToMany(mappedBy = "secretaria")
+	private List<miembro> miembro;
 	
-	@ManyToOne(mappedBy = "secretaria")
-	private evento evento;
+	@OneToMany(mappedBy = "secretaria")
+	private List<evento> evento;
 }

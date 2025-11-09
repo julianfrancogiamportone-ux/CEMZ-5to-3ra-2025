@@ -25,12 +25,27 @@ public class recurso {
 		super();
 	}
 
+	
+	
+
+	public recurso(String nombre_del_Recurso, int cantidad) {
+		super();
+		Nombre_del_Recurso = nombre_del_Recurso;
+		Cantidad = cantidad;
+	}
+
+
+
+
 	public recurso(String nombre_del_Recurso, int cantidad, CEMZ.Centro.entity.secretaria secretaria) {
 		super();
 		Nombre_del_Recurso = nombre_del_Recurso;
 		Cantidad = cantidad;
 		this.secretaria = secretaria;
 	}
+
+
+
 
 	public long getId() {
 		return id;

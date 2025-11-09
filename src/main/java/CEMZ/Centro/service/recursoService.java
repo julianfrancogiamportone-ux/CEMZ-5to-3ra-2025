@@ -6,10 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import CEMZ.Centro.Iservice.IeventoService;
 import CEMZ.Centro.Iservice.IrecursoService;
-import CEMZ.Centro.entity.evento;
-import CEMZ.Centro.repository.eventoRepository;
+import CEMZ.Centro.entity.recurso;
 import CEMZ.Centro.repository.recursoRepository;
 
 
@@ -26,7 +24,7 @@ public class recursoService implements IrecursoService{
 }
 
 	@Override
-	public  saveCharacter(recurso recurso) {
+	public recurso saveCharacter(recurso recurso) {
 		return pRepository.save(recurso);
 	}
 	@Override
