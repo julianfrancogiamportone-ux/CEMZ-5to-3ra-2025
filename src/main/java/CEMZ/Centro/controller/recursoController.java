@@ -18,7 +18,7 @@ import CEMZ.Centro.entity.recurso;
 
 
 @RestController
-@RequestMapping("/recurso")
+@RequestMapping("/recursos")
 @CrossOrigin(origins = "*")
 public class recursoController {
 	
@@ -29,7 +29,7 @@ public class recursoController {
 	public List<recurso> getAllCharacters(){
 		return eService.findAllCharacters();
 	}
-	@GetMapping("/estudiantes/{id}")
+	@GetMapping("/{id}")
 	public Optional<recurso> getCharacterById(@PathVariable long id){
 		return eService.findCharacterById(id);
 	}
@@ -37,5 +37,8 @@ public class recursoController {
 	public recurso createCharacter(@RequestBody recurso recurso) {
 		return eService.saveCharacter(recurso);
 	}
-
+	@GetMapping("/filtrar/{idSecretaria}")
+	public List<recurso> getEventosPorSecretaria(@PathVariable long idSecretaria){
+	    return eService.findBySecretariaId(idSecretaria);
+	}
 }

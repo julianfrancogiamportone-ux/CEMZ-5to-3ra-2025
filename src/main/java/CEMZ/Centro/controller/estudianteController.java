@@ -29,7 +29,7 @@ public class estudianteController {
 	public List<estudiante> getAllCharacters(){
 		return eService.findAllCharacters();
 	}
-	@GetMapping("/estudiantes/{id}")
+	@GetMapping("/{id}")
 	public Optional<estudiante> getCharacterById(@PathVariable long id){
 		return eService.findCharacterById(id);
 	}

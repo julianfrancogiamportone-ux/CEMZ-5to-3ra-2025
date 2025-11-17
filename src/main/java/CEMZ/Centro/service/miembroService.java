@@ -31,6 +31,9 @@ public class miembroService implements ImiembroService{
 	public Optional<miembro> findCharacterById(long id){
 		return eRepository.findById(id);
 	}
-	
+	@Override
+	public List<miembro> findBySecretariaId(long idSecretaria) {
+        return eRepository.findBySecretariaId(idSecretaria);
+    }
 }
 

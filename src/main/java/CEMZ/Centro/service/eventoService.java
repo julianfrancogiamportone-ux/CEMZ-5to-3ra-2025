@@ -31,6 +31,9 @@ public class eventoService implements IeventoService{
 	public Optional<evento> findCharacterById(long id){
 		return pRepository.findById(id);
 	}
-	
+	@Override
+    public List<evento> findBySecretariaId(long idSecretaria) {
+        return pRepository.findBySecretariaId(idSecretaria);
+    }
 }
 

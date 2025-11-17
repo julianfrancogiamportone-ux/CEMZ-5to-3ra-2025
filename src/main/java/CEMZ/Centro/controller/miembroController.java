@@ -28,7 +28,11 @@ public class miembroController {
 	public List<miembro> getAllCharacters(){
 		return eService.findAllCharacters();
 	}
-	@GetMapping("/miembro/{id}")
+	@GetMapping("/filtrar/{idSecretaria}")
+	public List<miembro> getEventosPorSecretaria(@PathVariable long idSecretaria){
+	    return eService.findBySecretariaId(idSecretaria);
+	}
+	@GetMapping("/{id}")
 	public Optional<miembro> getCharacterById(@PathVariable long id){
 		return eService.findCharacterById(id);
 	}

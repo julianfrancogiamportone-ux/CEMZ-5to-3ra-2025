@@ -28,7 +28,7 @@ public class secretariaController {
 	public List<secretaria> getAllCharacters(){
 		return pService.findAllCharacters();
 	}
-	@GetMapping("/secretarias/{id}")
+	@GetMapping("/{id}")
 	public Optional<secretaria> getCharacterById(@PathVariable long id){
 		return pService.findCharacterById(id);
 	}

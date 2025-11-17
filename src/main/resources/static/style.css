@@ -1,0 +1,261 @@
+/* --- VARIABLES DE COLORES --- */
+:root {
+    --color-principal: #5C2D5C;  /* Púrpura Oscuro */
+    --color-secundario: #BEE7D7; /* Menta Pálido */
+    --color-acento: #D28C38;     /* Naranja Quemado (para efectos) */
+    --color-fondo: #FAFAFA;      /* Fondo casi blanco */
+    --color-texto: #333333;      /* Gris oscuro para leer mejor */
+}
+
+/* --- RESET BÁSICO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Para que el footer baje si hay poco contenido */
+}
+
+/* --- HEADER (Igual a la imagen) --- */
+.main-header {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 10;
+}
+
+.logo-container h1 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.badge-year {
+    font-size: 1rem;
+    background-color: white;
+    color: var(--color-principal);
+    padding: 2px 6px;
+    border-radius: 50%;
+    vertical-align: top;
+    margin: 0 5px;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    margin-top: 5px;
+}
+
+/* --- NAV (Aquí arreglamos el problema de "vacío") --- */
+.main-nav {
+    background-color: var(--color-secundario);
+    /* Quitamos padding vertical excesivo, lo controlaremos con los enlaces */
+}
+
+.nav-links-container {
+    display: flex;
+    justify-content: center; /* CLAVE: Centramos los elementos */
+    gap: 4rem; /* CLAVE: Mucho espacio entre opciones para llenar visualmente */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--color-principal);
+    font-weight: 900;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    padding: 1rem 2rem; /* Hacemos el área de click grande */
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Efecto Hover: Una línea naranja que crece desde abajo */
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background-color: var(--color-acento);
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+    width: 100%; /* La línea llena todo el ancho al pasar el mouse */
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Un brillo sutil al pasar el mouse */
+}
+
+/* --- MAIN CONTENT --- */
+.intro-container {
+    flex: 1; /* Ocupa el espacio sobrante */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem;
+}
+
+.intro-content {
+    max-width: 700px;
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 5px solid var(--color-principal); /* Detalle estético */
+}
+
+.intro-content h2 {
+    color: var(--color-principal);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.intro-content h2:not(:first-child) {
+    margin-top: 2rem;
+}
+
+.intro-content p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* --- FOOTER --- */
+.main-footer {
+    background-color: var(--color-principal);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+/* --- ESTILOS ESPECÍFICOS DE SECRETARIAS.HTML --- */
+
+.secretaria-container {
+    flex: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* 1. TABS SUPERIORES (Selector de Secretaría) */
+.tabs-secretarias {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 1rem;
+}
+
+.btn-secretaria {
+    background-color: white;
+    border: 2px solid var(--color-principal);
+    color: var(--color-principal);
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-secretaria:hover,
+.btn-secretaria.active {
+    background-color: var(--color-principal);
+    color: white;
+}
+
+/* 2. PANEL DE INFORMACIÓN */
+.info-panel {
+    text-align: center;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.info-panel h2 {
+    color: var(--color-principal);
+    margin-bottom: 10px;
+}
+
+/* 3. BOTONES DE ACCIÓN (Recursos, Miembros, Eventos) */
+.acciones-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.btn-accion {
+    background-color: var(--color-acento); /* Naranja */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.btn-accion:hover {
+    transform: translateY(-2px); /* Efecto de "levantarse" */
+    background-color: #bf7c2e; /* Un naranja un poco más oscuro */
+}
+
+/* 4. TABLA DE RESULTADOS */
+.tabla-cemz {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.tabla-cemz thead {
+    background-color: var(--color-principal);
+    color: white;
+}
+
+.tabla-cemz th, .tabla-cemz td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.tabla-cemz tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* CLASE DE UTILIDAD */
+.hidden {
+    display: none !important;
+}
+
+.loading-text {
+    color: #666;
+    font-style: italic;
+}

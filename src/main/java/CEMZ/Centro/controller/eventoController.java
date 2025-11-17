@@ -29,7 +29,11 @@ public class eventoController {
 	public List<evento> getAllCharacters(){
 		return pService.findAllCharacters();
 	}
-	@GetMapping("/eventos/{id}")
+	@GetMapping("/filtrar/{idSecretaria}")
+	public List<evento> getEventosPorSecretaria(@PathVariable long idSecretaria){
+	    return pService.findBySecretariaId(idSecretaria);
+	}
+	@GetMapping("/{id}")
 	public Optional<evento> getCharacterById(@PathVariable long id){
 		return pService.findCharacterById(id);
 	}

@@ -31,6 +31,9 @@ public class recursoService implements IrecursoService{
 	public Optional<recurso> findCharacterById(long id){
 		return pRepository.findById(id);
 	}
-	
+	@Override
+    public List<recurso> findBySecretariaId(long idSecretaria) {
+        return pRepository.findBySecretariaId(idSecretaria);
+    }
 }
 
